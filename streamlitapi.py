@@ -1,6 +1,8 @@
 import pickle
 import streamlit as st
 import os
+import sklearn
+
 
 # Load the model from the current directory
 model_path = 'salary_prediction_model.pkl'
