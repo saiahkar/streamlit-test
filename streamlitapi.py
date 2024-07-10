@@ -11,19 +11,15 @@ else:
     model = None
 
 def main():
-    st.title('Salary Prediction App')
+    st.title('MEF Salary Prediction')
 
-    # Display the image using a relative path
-    image_path = 'logo.png'
-    if os.path.exists(image_path):
-        st.image(image_path, caption='Company Logo', use_column_width=True)
-    else:
-        st.warning(f'Image file not found: {image_path}')
+    # Display the image
+    st.image('sal.png', caption='mef', use_column_width=True)
 
     # Input variable
     Year = st.text_input('Year')
     
-    # Prediction code
+     # Prediction code
     if st.button('Predict'):
         if model:
             try:
