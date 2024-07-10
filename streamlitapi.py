@@ -3,9 +3,10 @@ import streamlit as st
 import os
 
 # Load the model using a relative path
-model_path = 'salary_prediction_model.pkl'
+model_path = 'C:/Users/hsaia/MEF/streamlit test/salary_prediction_model.pkl'
 if os.path.exists(model_path):
-    model = pickle.load(open(model_path, 'rb'))
+    with open(model_path, 'rb') as file:
+        model = pickle.load(file)
 else:
     st.error(f'Model file not found: {model_path}')
     model = None
@@ -19,7 +20,7 @@ def main():
     # Input variable
     Year = st.text_input('Year')
     
-     # Prediction code
+    # Prediction code
     if st.button('Predict'):
         if model:
             try:
