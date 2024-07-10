@@ -3,7 +3,10 @@ import streamlit as st
 import os
 
 # Load the model using a relative path
-model_path = 'C:/Users/hsaia/MEF/streamlit test/salary_prediction_model.pkl'
+model_path = 'salary_prediction_model.pkl'
+current_dir = os.getcwd()
+st.write(f"Current directory: {current_dir}")
+
 if os.path.exists(model_path):
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
@@ -15,7 +18,11 @@ def main():
     st.title('MEF Salary Prediction')
 
     # Display the image
-    st.image('sal.png', caption='mef', use_column_width=True)
+    image_path = 'sal.png'
+    if os.path.exists(image_path):
+        st.image(image_path, caption='mef', use_column_width=True)
+    else:
+        st.warning(f'Image file not found: {image_path}')
 
     # Input variable
     Year = st.text_input('Year')
