@@ -1,7 +1,6 @@
 import pickle
 import streamlit as st
 import os
-import sklearn
 
 
 # Load the model from the current directory
